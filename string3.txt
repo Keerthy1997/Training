@@ -1,0 +1,56 @@
+package com;
+
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class MainAPP {
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+Student s1=new Student("keerthy", 32, 23);
+Student s2=new Student("kavya",31,22);
+Student s3=new Student("karthik",30,22);
+
+
+
+
+		
+		
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		
+		try {
+			FileOutputStream fos= new FileOutputStream("hello.txt");
+			ObjectOutputStream ous= new ObjectOutputStream(fos);
+			ous.writeObject(s1);
+			ous.writeObject(s2);
+			ous.writeObject(s3);
+			ous.close();
+			System.out.println("written data to the file");
+		}
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+			System.out.println("fetching data from the file");
+			ObjectInputStream ois= new ObjectInputStream(new FileInputStream("hello.txt"));
+			Student s=(Student)ois.readObject();
+			System.out.println("student name: "+s.name);
+			System.out.println("student number: "+s.number);
+			System.out.println("student age: "+s.age);
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
+
+
