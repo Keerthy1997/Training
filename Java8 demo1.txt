@@ -1,0 +1,26 @@
+package com;
+import java.swing.DefaultBoundedRandeMode1;
+
+interface A{
+	void display();
+default void print() {
+
+System.out.println("This is default method");
+}
+static void show() {
+System.out.println("This is show method");
+}
+public class InterfaceDemo implements A{
+public void display() {
+	System.out.println("This is implemented Display method");
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+InterfaceDemo id= new InterfaceDemo();
+id.display();
+id.print();
+A.show();
+	}
+	}
+
+}
