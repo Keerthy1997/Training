@@ -1,0 +1,48 @@
+package com;
+
+
+
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Employee {
+int id;
+String name;
+	
+	public Employee(int x, String y) {
+		// TODO Auto-generated constructor stub
+		id=x;
+		name=y;
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Employee em1 = new Employee(1,"keerthy");
+		Employee em2 = new Employee(2,"kavya");
+		Employee em3 = new Employee(3,"krishna");
+	
+		
+		
+		java.util.ArrayList<Employee> list= new java.util.ArrayList<Employee>();
+		list.add(em1);
+		list.add(em2);
+		list.add(em3);
+		
+		Iterator<Employee> itr =list.iterator();
+		while(itr.hasNext()){ 
+			Employee emp= itr.next();
+			System.out.println("Employee id:"+emp.id);
+			System.out.println("Employee name:"+emp.name);
+		    System.out.println("");
+		}
+	}
+}
+			
+		
+		
+	
+
